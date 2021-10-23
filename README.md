@@ -7,5 +7,5 @@ This python program for generating numbers from 1 to 10 in a random order
   
 2- Run "python -m pip install random"
 
-3- Run "python random_genrator.py"
+3- Run "python random_generator.py"
 
