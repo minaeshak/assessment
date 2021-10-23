@@ -1,1 +1,9 @@
-As SSL Offloading is CPU sensitve process , one of the important metrics to be mesured is the CPU also we should 
+As SSL Offloading is CPU sensitve process because offloading process includes cryptography to be able to compete and crunch a lot of data to secure it . So , one of the important metrics to be mesured is the CPU . 
+
+Also we should monitor the certificates expiry dates on this server so we can start the renewal process before certificates got expired .
+
+As we have 2 x 10Gbit/s Network Interface and 25000 Requests/s so after calculations for a good performace the single request size shouldn't exceed 1000,000 bytes = 1 Megabytes . Hence we need to keep our eye and monitor the Network In/Out 
+
+We can setup our monitoring platform using many ways . One of them which I prefer because it has many plugins that we can use is Prometheus . We can setup it in the same server or in another standalone one so we can have centralized performance and using the node_exporter plugin we can monitor CPU and NetworkIn/Out metrics also we can setup alerts to be triggered on any channels ( Mobile Call , SMS and even Slack or Discord channels ) and by the way I already did that on one of my projects .
+
+We will face a challenge here in monitoring the SSL certificates expiry date as this will lead us to develop a script with any language we prefer ( mainly bash or python ) to collect the expire dates everyday for all certificates installed on the server and then we can use this script to trigger alerts on Prometheus monitoring tool .
